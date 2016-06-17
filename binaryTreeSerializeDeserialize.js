@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -12,7 +14,7 @@
  * @param {TreeNode} root
  * @return {string}
  */
-var serialize = function(root) {
+let serialize = (root) => {
     
 };
 
@@ -22,7 +24,7 @@ var serialize = function(root) {
  * @param {string} data
  * @return {TreeNode}
  */
-var deserialize = function(data) {
+deserialize = (data) => {
     
 };
 
