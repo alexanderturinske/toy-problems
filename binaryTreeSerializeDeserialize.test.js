@@ -1,11 +1,12 @@
 'use strict';
 
+import { describe, it } from 'mocha';
 import { serialize, deserialize } from './binaryTreeSerializeDeserialize';
 import { assert } from 'chai';
 
-describe('', () => {
-  describe('problem 1', () => {
-    describe('the linkedListInsertionSort function', () => {
+describe('Binary Tree', () => {
+  describe('Problem 1', () => {
+    describe('Serialize and Deserialize a Binary Tree', () => {
 
       function BinaryTree(val) {
         this.root = val;
@@ -16,7 +17,7 @@ describe('', () => {
       BinaryTree.prototype.deserialize = deserialize;
 
       BinaryTree.prototype.add = (val, node, queue) => {
-        const queue = queue || [];
+        queue = queue || [];
         node = node || this.root;
         if (!node.left) {
           node.left = {
