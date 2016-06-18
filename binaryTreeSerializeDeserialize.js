@@ -14,7 +14,7 @@
  * @param {TreeNode} root
  * @return {string}
  */
-let serialize = (root) => {
+var serialize = (root) => {
     
 };
 
@@ -24,7 +24,7 @@ let serialize = (root) => {
  * @param {string} data
  * @return {TreeNode}
  */
-deserialize = (data) => {
+var deserialize = (data) => {
     
 };
 
@@ -32,3 +32,8 @@ deserialize = (data) => {
  * Your functions will be called as such:
  * deserialize(serialize(root));
  */
+
+module.exports = {
+  serialize: serialize,
+  deserialize: deserialize,
+}

@@ -1,8 +1,8 @@
 'use strict';
 
-import { describe, it } from 'mocha';
-import { serialize, deserialize } from './binaryTreeSerializeDeserialize';
-import { assert } from 'chai';
+var serialize = require('./binaryTreeSerializeDeserialize').serialize;
+var deserialize = require('./binaryTreeSerializeDeserialize').deserialize;
+var assert = require('chai').assert;
 
 describe('Binary Tree', () => {
   describe('Problem 1', () => {
@@ -11,7 +11,7 @@ describe('Binary Tree', () => {
       function BinaryTree(val) {
         this.root = val;
         this.left = this.right = null;
-      };
+      }
 
       BinaryTree.prototype.serialize = serialize;
       BinaryTree.prototype.deserialize = deserialize;
@@ -40,12 +40,11 @@ describe('Binary Tree', () => {
         return this.add(val, queue.shift(), queue);
       };
 
-      let sapling = new BinaryTree(5);
+      var sapling = new BinaryTree(5);
       sapling.add(1);
       sapling.add(2);
       sapling.add(3);
       sapling.add(4);
-      console.log(sapling);
 
       it('Should return the sorted linked list head value', () => {
         // assert.equal(coolList.linkedListInsertionSort().value, 3);
