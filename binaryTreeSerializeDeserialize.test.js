@@ -9,9 +9,11 @@ describe('Binary Tree', function () {
     describe('Serialize and Deserialize a Binary Tree', () => {
 
       var BinaryTree = function (val) {
-        this.root = val;
-        this.left = null;
-        this.right = null;
+        this.root = {
+          value: val,
+          left: null,
+          right: null,
+        };
       };
 
       BinaryTree.prototype.serialize = serialize;
@@ -29,23 +31,24 @@ describe('Binary Tree', function () {
           return;
         }
         if (!node.right) {
-          node.left = {
+          node.right = {
             value: val,
             left: null,
             right: null,
           };
           return;
         }
-        que.push(node.left);
-        que.push(node.right);
+        queue.push(node.left);
+        queue.push(node.right);
         return this.add(val, queue.shift(), queue);
       };
 
-      var sapling = new BinaryTree(5);
-      sapling.add(1);
+      var sapling = new BinaryTree(1);
       sapling.add(2);
       sapling.add(3);
       sapling.add(4);
+      sapling.add(5);
+      sapling.add(6);
 
       it('Should return the sorted linked list head value', function () {
         // assert.equal(coolList.linkedListInsertionSort().value, 3);

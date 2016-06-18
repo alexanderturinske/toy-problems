@@ -14,7 +14,7 @@
  * @param {TreeNode} root
  * @return {string}
  */
-var serialize = (root) => {
+var serialize = function (root) {
     
 };
 
@@ -24,7 +24,7 @@ var serialize = (root) => {
  * @param {string} data
  * @return {TreeNode}
  */
-var deserialize = (data) => {
+var deserialize = function (data) {
     
 };
 
