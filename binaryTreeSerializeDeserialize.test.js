@@ -8,14 +8,35 @@ describe('', () => {
     describe('the linkedListInsertionSort function', () => {
 
       function BinaryTree(val) {
-        this.val = val;
+        this.root = val;
         this.left = this.right = null;
       };
 
       BinaryTree.prototype.serialize = serialize;
       BinaryTree.prototype.deserialize = deserialize;
-      BinaryTree.prototype.addNode = (val) => {
 
+      BinaryTree.prototype.add = (val, node, queue) => {
+        const queue = queue || [];
+        node = node || this.root;
+        if (!node.left) {
+          node.left = {
+            value: val,
+            left: null,
+            right: null,
+          };
+          return;
+        }
+        if (!node.right) {
+          node.left = {
+            value: val,
+            left: null,
+            right: null,
+          };
+          return;
+        }
+        que.push(node.left);
+        que.push(node.right);
+        return this.add(val, queue.shift(), queue);
       };
 
       let sapling = new BinaryTree(5);
