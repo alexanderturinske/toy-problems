@@ -4,7 +4,7 @@
   "description": "A place to practice basic problems",
   "main": "''",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "babel-node"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/alexanderturinske/toy-problems/issues"
   },
-  "homepage": "https://github.com/alexanderturinske/toy-problems#readme"
+  "homepage": "https://github.com/alexanderturinske/toy-problems#readme",
+  "dependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
 }
