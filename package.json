@@ -1,0 +1,19 @@
+{
+  "name": "toy-problems",
+  "version": "1.0.0",
+  "description": "A place to practice basic problems",
+  "main": "''",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderturinske/toy-problems.git"
+  },
+  "author": "Alexander James Turinske",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexanderturinske/toy-problems/issues"
+  },
+  "homepage": "https://github.com/alexanderturinske/toy-problems#readme"
+}
