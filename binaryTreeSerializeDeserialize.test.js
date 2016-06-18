@@ -4,19 +4,20 @@ var serialize = require('./binaryTreeSerializeDeserialize').serialize;
 var deserialize = require('./binaryTreeSerializeDeserialize').deserialize;
 var assert = require('chai').assert;
 
-describe('Binary Tree', () => {
-  describe('Problem 1', () => {
+describe('Binary Tree', function () {
+  describe('Problem 1', function () {
     describe('Serialize and Deserialize a Binary Tree', () => {
 
-      function BinaryTree(val) {
+      var BinaryTree = function (val) {
         this.root = val;
-        this.left = this.right = null;
-      }
+        this.left = null;
+        this.right = null;
+      };
 
       BinaryTree.prototype.serialize = serialize;
       BinaryTree.prototype.deserialize = deserialize;
 
-      BinaryTree.prototype.add = (val, node, queue) => {
+      BinaryTree.prototype.add = function (val, node, queue) {
         queue = queue || [];
         node = node || this.root;
         if (!node.left) {
@@ -46,7 +47,7 @@ describe('Binary Tree', () => {
       sapling.add(3);
       sapling.add(4);
 
-      it('Should return the sorted linked list head value', () => {
+      it('Should return the sorted linked list head value', function () {
         // assert.equal(coolList.linkedListInsertionSort().value, 3);
       });
     });
