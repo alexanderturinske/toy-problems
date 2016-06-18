@@ -40,6 +40,11 @@ describe('', () => {
       };
 
       let sapling = new BinaryTree(5);
+      sapling.add(1);
+      sapling.add(2);
+      sapling.add(3);
+      sapling.add(4);
+      console.log(sapling);
 
       it('Should return the sorted linked list head value', () => {
         // assert.equal(coolList.linkedListInsertionSort().value, 3);
