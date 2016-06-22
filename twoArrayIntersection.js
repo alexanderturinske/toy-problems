@@ -11,6 +11,10 @@ The result can be in any order.
 
 */
 
-const twoArrayIntersection = (array1, array2) => {
+var twoArrayIntersection = function (array1, array2) {
 
+};
+
+module.exports = {
+   twoArrayIntersection: twoArrayIntersection,
 };
