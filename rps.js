@@ -9,8 +9,27 @@
  */
 
 var rps = function (n) {
-
+  var options = ['r', 'p', 's'];
+  var output = [];
+  var traverse = function (path) {
+    path = path || [];
+    // base case
+    if (path.length === n) {
+      output.push(path);
+      return;
+    }
+    // recursive case
+    options.forEach(function (e) {
+      path = path.concat(e);
+      traverse(path);
+      path = path.slice(0, -1);
+    });
+  };
+  traverse();
+  return output;
 };
+
+console.log(rps(3));
 
 module.exports = {
   rps: rps,
