@@ -49,11 +49,12 @@ There are a lot really fun and interesting toy problems out there that can provi
 
 
 =====================
-## Miscellaneous
-- [ ] Rock, Paper, Scissors
+## Sorting Algorithms
+
 
 =====================
-## Sorting Algorithms
+## Miscellaneous
+- [ ] Rock, Paper, Scissors
 
 
 =====================
