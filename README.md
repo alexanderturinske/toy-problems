@@ -24,6 +24,7 @@ There are a lot really fun and interesting toy problems out there that can provi
 =====================
 ## Numbers
 - [ ] Is Prime
+- [ ] Nth Fibonacci
 
 =====================
 ## Arrays
