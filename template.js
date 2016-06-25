@@ -7,13 +7,13 @@ var NAME = function () {
 
 };
 
-console.log(NAME());
+console.log(EXPECTED === NAME());
 //-> EXPECTED OUTCOME
-console.log(NAME());
+console.log(EXPECTED === NAME());
 //-> EXPECTED OUTCOME
-console.log(NAME());
+console.log(EXPECTED === NAME());
 //-> EXPECTED OUTCOME
-console.log(NAME());
+console.log(EXPECTED === NAME());
 //-> EXPECTED OUTCOME
 
 module.exports = {
