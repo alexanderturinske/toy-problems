@@ -5,20 +5,25 @@ There are a lot really fun and interesting toy problems out there that can provi
 ## Table of Contents
 
 1. [Strings](#strings)
-2. [Arrays](#arrays)
-3. [Matricies](#matricies)
-3. [Linked Lists](#linked-lists)
-4. [Graphs](#graphs)
-5. [Trees](#trees)
-6. [Heaps](#heaps)
-7. [Tries](#tries)
-8. [Miscellaneous](#miscillaneous)
-9. [Sorting Algorithms](#sorting-algorithms)
-10. [Questions and Issues](#questions-and-issues)
+2. [Numbers](#numbers)
+3. [Arrays](#arrays)
+4. [Matricies](#matricies)
+5. [Linked Lists](#linked-lists)
+6. [Graphs](#graphs)
+7. [Trees](#trees)
+8. [Heaps](#heaps)
+9. [Tries](#tries)
+10. [Miscellaneous](#miscillaneous)
+11. [Sorting Algorithms](#sorting-algorithms)
+12. [Questions and Issues](#questions-and-issues)
 
 =====================
 ## Strings
 
+
+=====================
+## Numbers
+- [ ] Is Prime
 
 =====================
 ## Arrays
