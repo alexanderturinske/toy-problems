@@ -32,6 +32,7 @@ There are a lot really fun and interesting toy problems out there that can provi
 =====================
 ## Matricies
 - [ ] Islands
+- [ ] Water Blocks
 
 =====================
 ## Linked Lists
@@ -60,6 +61,8 @@ There are a lot really fun and interesting toy problems out there that can provi
 =====================
 ## Miscellaneous
 - [ ] Rock, Paper, Scissors
+- [ ] Throttle
+- [ ] Stairs
 
 
 =====================
