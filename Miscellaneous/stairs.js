@@ -7,20 +7,24 @@
 var stairs = function (n) {
   var paths = arguments[1] || 0;
   // base case
-  if (n === 0) {
+  if ((n === 0) && (arguments[1] !== undefined)) {
     return 1;
   }
   // recursive case
   for (var i = 1; i <= 3; i++) {
     n -= i;
     if (n >= 0) {
-      paths += stairs(n);
+      paths += stairs(n, 0);
     }
     n += i;
   }
   return paths;
 };
 
+console.log(0 === stairs(-1));
+//-> 0
+console.log(0 === stairs(0));
+//-> 0
 console.log(1 === stairs(1));
 //-> 1
 console.log(2 === stairs(2));
