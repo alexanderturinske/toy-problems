@@ -1,12 +1,12 @@
 'use strict';
 /**
  * Description
- */
+**/
 
- var NAME = function () {
+var NAME = function () {
 
- };
+};
 
- module.exports = {
-  NAME: NAME,
- };
+module.exports = {
+NAME: NAME,
+};
