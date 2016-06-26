@@ -12,6 +12,23 @@ Pour water from one jug into another till the other jug is completely full or th
 **/
 
 var waterJugs = function (jug1, jug2, desiredVolume) {
+  // var possibilities = [jug1, jug2, Math.abs(jug1 - jug2), jug1 + jug2];
+  // base case
+  if (desiredVolume < 0) {
+    return false;
+  }
+  if (desiredVolume === 0) {
+    return true;
+  }
+  // recursive case
+  if (waterJugs(jug1, jug2, desiredVolume - jug1) ||
+  waterJugs(jug1, jug2, desiredVolume - jug2) ||
+  waterJugs(jug1, jug2, desiredVolume - Math.abs(jug1 - jug2)) ||
+  waterJugs(jug1, jug2, desiredVolume - (jug1 + jug2))) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 console.log(waterJugs(3, 5, 4) === true);
