@@ -4,21 +4,36 @@
  * different ways can one traverse the stairs?
 **/
 
+// Recursive
+// var stairs = function (n) {
+//   var paths = arguments[1] || 0;
+//   // base case
+//   if ((n === 0) && (arguments[1] !== undefined)) {
+//     return 1;
+//   }
+//   // recursive case
+//   for (var i = 1; i <= 3; i++) {
+//     n -= i;
+//     if (n >= 0) {
+//       paths += stairs(n, 0);
+//     }
+//     n += i;
+//   }
+//   return paths;
+// };
+
+// Dynamic
 var stairs = function (n) {
-  var paths = arguments[1] || 0;
-  // base case
-  if ((n === 0) && (arguments[1] !== undefined)) {
+  if (n <= 0) {
+    return 0;
+  } else if (n === 1) {
     return 1;
+  } else if (n === 2) {
+    return 2;
+  } else if (n === 3) {
+    return 4;
   }
-  // recursive case
-  for (var i = 1; i <= 3; i++) {
-    n -= i;
-    if (n >= 0) {
-      paths += stairs(n, 0);
-    }
-    n += i;
-  }
-  return paths;
+  return stairs(n - 3) + stairs(n - 2) + stairs(n - 1);
 };
 
 console.log(0 === stairs(-1));
