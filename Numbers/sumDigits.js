@@ -20,26 +20,34 @@
 // };
 
 // Constant Time
-var sumDigits = function(n) {
-  if (n === 0) {
-    return 0
-  } else if (!((n - 1) % 9)) {
-    return 1;
-  } else if (!((n - 2) % 9)) {
-    return 2;
-  } else if (!((n - 3) % 9)) {
-    return 3;
-  } else if (!((n - 4) % 9)) {
-    return 4;
-  } else if (!((n - 5) % 9)) {
-    return 5;
-  } else if (!((n - 6) % 9)) {
-    return 6;
-  } else if (!((n - 7) % 9)) {
-    return 7;
-  } else if (!((n - 8) % 9)) {
-    return 8;
-  } else if (!((n - 9) % 9)) {
+// var sumDigits = function (n) {
+//   if (n === 0) {
+//     return 0
+//   } else if (!((n - 1) % 9)) {
+//     return 1;
+//   } else if (!((n - 2) % 9)) {
+//     return 2;
+//   } else if (!((n - 3) % 9)) {
+//     return 3;
+//   } else if (!((n - 4) % 9)) {
+//     return 4;
+//   } else if (!((n - 5) % 9)) {
+//     return 5;
+//   } else if (!((n - 6) % 9)) {
+//     return 6;
+//   } else if (!((n - 7) % 9)) {
+//     return 7;
+//   } else if (!((n - 8) % 9)) {
+//     return 8;
+//   } else if (!((n - 9) % 9)) {
+//     return 9;
+//   }
+// };
+
+var sumDigits = function (n) {
+  if (n % 9) {
+    return n % 9;
+  } else {
     return 9;
   }
 };
