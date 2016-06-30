@@ -4,35 +4,29 @@
 **/
 
 var toBinary = function (n) {
-  // define number equal to n
-  var number = n;
   // create array to hold numbers
   var numArray = [];
-  // if number is odd
-  if (!(n % 2)) {
-    // remove add 1 to array and remove
-    numArray.push(1);
-    number--;
-  }
+  var number = n;
   // create a counter starting at 1
-  var counter = 1;
+  var counter = 0;
   // while remainder of number doesn't equal the number
   while (number % Math.pow(2, counter) !== number) {
     // increment counter
     counter++;
   }
   // for the number of times of the counter
-  for (var i = 0; i < counter; i++) {
+  for (var i = counter - 1; i >= 0; i--) {
     // if the remainder isn't the same as the number
-    if (number % Math.pow(2, counter)) {
+    console.log(Math.pow(2, i));
+    if (number >= Math.pow(2, i)) {
       // set number to the remainder
-      number = number % Math.pow(2, counter);
-      // unshift a one into the number array
-      numArray.unshift(1);
+      number -= Math.pow(2, i);
+      // push a one into the number array
+      numArray.push(1);
     // else
     } else {
-      // unshift a zero
-      numArray.unshift(0);
+      // push a zero
+      numArray.push(0);
     }
   }
   console.log(numArray.join(''));
