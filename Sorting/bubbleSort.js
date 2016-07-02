@@ -4,7 +4,19 @@
 **/
 
 var bubbleSort = function (array) {
-
+  // define a new array from the input array
+  // define a temp variable
+  // define a variable called swapped
+  // do
+    // set swapped equal to false
+    // for each element in the array except the first element
+      // if the element before is greater than the one after
+        // set temp equal to the one before
+        // set the previous element equal to the current element
+        // set the current element equal to temp
+        // set swapped equal to true
+  // while swapped is true
+  // return array
 };
 
 console.log(bubbleSort([]) + ' is ' + [] + ' sorted');
