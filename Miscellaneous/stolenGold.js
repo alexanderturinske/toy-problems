@@ -41,7 +41,44 @@ Got caught!
 **/
 
 var stolenGold = function (input) {
-
+  var info = input
+    .split('\n')
+    .map(function (e) {
+      return e.split(' ');
+    })
+    .map(function (e) {
+      return [parseInt(e[0], 10), parseInt(e[1], 10)];
+    });
+  var gold = info[0][1];
+  var profit = 0;
+  var answer = 'Got caught!';
+  var solution;
+  var findSolution = function (transactions) {
+    transactions = transactions || [];
+    // base case
+    if (gold < 0) {
+      return;
+    }
+    if (gold === 0) {
+      if (profit > answer || typeof answer === 'string') {
+        answer = profit;
+      }
+    }
+    // recursive case
+    for (var i = 1; i < info.length; i++) {
+      if (transactions.indexOf(info[i][1] + info[i][0]) < 0) {
+        gold -= info[i][1];
+        profit += info[i][0];
+        transactions = transactions.concat(info[i][1] + info[i][0]);
+        findSolution(transactions);
+        gold += info[i][1];
+        profit -= info[i][0];
+        transactions = transactions.slice(0, -1);
+      }
+    }
+  }
+  findSolution();
+  return answer;
 };
 
 console.log(stolenGold(
@@ -56,7 +93,7 @@ console.log(stolenGold(
 '100 5\n' +
 '120 10\n' +
 '300 2\n' +
-'500 3\n') === 'Got caught!');
+'500 3') === 'Got caught!');
 // -> 'Got caught!'
 
 module.exports = {
