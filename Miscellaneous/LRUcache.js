@@ -15,7 +15,7 @@ class LRUcache {
 
   get(key) {
 
-  };
+  }
 
   set(key, value) {
     // if head isn't there
@@ -30,20 +30,30 @@ class LRUcache {
       this.head = this.newNode(key, value, temp, null);
       temp.prev = this.head;
     }
-  };
+  }
 
   retrieveAll() {
-    // define an array to store the values in
+    // define an array, values, to store the values in
+    var values = [];
     // define a recursive function that takes a node as an argument
+    const findAll = (node) => {
+      // push node.value into the values
+      values.push(node.value);
       // base case
       // if node.next equals null
+      if (!node.next) {
         // return;
+        return;
+      }
       // recursive case
-        // push node.value into the array
-        // call the recursive function with node.next
+      // call the recursive function with node.next
+      findAll(node.next);
+    };
     // call recursive function with this.head
-    // return array
-  };
+    findAll(this.head);
+    // return values
+    return values;
+  }
 
   newNode(key, value, next, prev) {
     return {
@@ -52,7 +62,7 @@ class LRUcache {
       next,
       prev,
     };
-  };
+  }
 
 }
 const test = new LRUcache();
@@ -61,7 +71,8 @@ test.set(1, 'b');
 test.set(2, 'c');
 test.set(3, 'd');
 test.set(4, 'e');
-console.log(test.retrieveAll() === ['e', 'd', 'c', 'b', 'a']);
+console.log(test.retrieveAll());
+console.log(test.retrieveAll());
 // -> ['e', 'd', 'c', 'b', 'a']
 test.set(5, 'f');
 console.log(test.retrieveAll() === ['f', 'e', 'd', 'c', 'b']);
