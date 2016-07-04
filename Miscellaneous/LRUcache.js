@@ -17,9 +17,43 @@ class LRUcache {
   }
 
   get(key) {
-
+    // create temp variable that will store the value
+    let temp;
+    // create a recursive function, find, that takes a node as an argument
+    const find = node => {
+      // base case
+      // if node.key equals key
+      if (node.key === key) {
+        // set temp equal to node.value
+        temp = node.value;
+        // if the current node doesn't equal the head
+        if (this.head.key !== node.key) {
+          // set the previous node's next value to the current node's next value
+          node.prev.next = node.next;
+          // set the current node's next value equal to the head
+          node.next = this.head;
+          // set the head's prev value equal to the current node
+          this.head.prev = node;
+          // set the head equal to the current node
+          this.head = node;
+        }
+        return;
+      }
+      // if the value doesn't exist
+      if (!node.next) {
+        temp = -1;
+      }
+      // recursive case
+      // call find on node.next
+      find(node.next);
+    };
+    // call find with this.head
+    find(this.head);
+    // return temp
+    return temp;
   }
 
+  // TODO account for if the key is already there
   set(key, value) {
     // if head isn't there
     if (!this.head) {
@@ -95,7 +129,7 @@ console.log(test.retrieveAll());
 // -> ['f', 'e', 'd', 'c', 'b']
 test.get(3);
 test.get(4);
-console.log(test.retrieveAll() === ['e', 'd', 'f', 'c', 'b']);
+console.log(test.retrieveAll());
 // -> ['e', 'd', 'f', 'c', 'b']
 test.get(2);
 console.log(test.retrieveAll() === ['c', 'e', 'd', 'f', 'b']);
