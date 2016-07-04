@@ -1,4 +1,5 @@
 'use strict';
+
 /**
 Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.
 
@@ -7,23 +8,22 @@ set(key, value) - Set or insert the value if the key is not already present. Whe
 
 **/
 
-var LRUcache = function () {
+class LRUcache {
+}
+
+LRUcache.prototype.get = (key) => {
 
 };
 
-LRUcache.prototype.get = function (key) {
+LRUcache.prototype.set = (key, value) => {
 
 };
 
-LRUcache.prototype.set = function (key, value) {
+LRUcache.prototype.retrieveAll = () => {
 
 };
 
-LRUcache.prototype.retrieveAll = function() {
-
-};
-
-var test = new LRUcache();
+const test = new LRUcache();
 test.set(0, 'a');
 test.set(1, 'b');
 test.set(2, 'c');
@@ -43,5 +43,5 @@ console.log(test.retrieveAll() === ['c', 'e', 'd', 'f', 'b']);
 // -> ['c', 'e', 'd', 'f', 'b']
 
 module.exports = {
-  LRUcache: LRUcache,
+  LRUcache,
 };
