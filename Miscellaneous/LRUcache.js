@@ -9,6 +9,9 @@ set(key, value) - Set or insert the value if the key is not already present. Whe
 **/
 
 class LRUcache {
+  constructor() {
+    this.head = null;
+  }
 }
 
 LRUcache.prototype.get = (key) => {
