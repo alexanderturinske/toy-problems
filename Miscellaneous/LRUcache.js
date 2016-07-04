@@ -9,8 +9,11 @@ set(key, value) - Set or insert the value if the key is not already present. Whe
 **/
 
 class LRUcache {
-  constructor() {
+  constructor(maxLength) {
     this.head = null;
+    this.tail = null;
+    this.maxLength = maxLength;
+    this.length = 0;
   }
 
   get(key) {
@@ -25,7 +28,7 @@ class LRUcache {
     // if head is there
     } else {
       // set a temp variable equal to the head
-      var temp = this.head;
+      const temp = this.head;
       // assign the new head to the new key/value object with the next being null
       this.head = this.newNode(key, value, temp, null);
       temp.prev = this.head;
@@ -34,7 +37,7 @@ class LRUcache {
 
   retrieveAll() {
     // define an array, values, to store the values in
-    var values = [];
+    const values = [];
     // define a recursive function that takes a node as an argument
     const findAll = (node) => {
       // push node.value into the values
@@ -65,7 +68,7 @@ class LRUcache {
   }
 
 }
-const test = new LRUcache();
+const test = new LRUcache(5);
 test.set(0, 'a');
 test.set(1, 'b');
 test.set(2, 'c');
