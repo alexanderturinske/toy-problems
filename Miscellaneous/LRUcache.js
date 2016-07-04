@@ -12,29 +12,29 @@ class LRUcache {
   constructor() {
     this.head = null;
   }
-}
 
-LRUcache.prototype.get = (key) => {
+  get(key) {
 
-};
-
-LRUcache.prototype.set = (key, value) => {
-
-};
-
-LRUcache.prototype.retrieveAll = () => {
-
-};
-
-LRUcache.prototype.node = (key, value, next, prev) => {
-  return {
-    key,
-    value,
-    next,
-    prev,
   };
-};
 
+  set(key, value) {
+
+  };
+
+  retrieveAll() {
+
+  };
+
+  newNode(key, value, next, prev) {
+    return {
+      key,
+      value,
+      next,
+      prev,
+    };
+  };
+
+}
 const test = new LRUcache();
 test.set(0, 'a');
 test.set(1, 'b');
