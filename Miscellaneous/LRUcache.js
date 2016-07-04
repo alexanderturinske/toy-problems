@@ -23,8 +23,14 @@ class LRUcache {
   set(key, value) {
     // if head isn't there
     if (!this.head) {
-      // set as head with a next of null
-      this.head = this.newNode(key, value, null, null);
+      if (this.maxLength) {
+        // set as head with a next of null
+        this.head = this.newNode(key, value, null, null);
+        // set as tail
+        this.tail = this.head;
+        // increment length by 1
+        this.length++;
+      }
     // if head is there
     } else {
       // set a temp variable equal to the head
@@ -32,6 +38,14 @@ class LRUcache {
       // assign the new head to the new key/value object with the next being null
       this.head = this.newNode(key, value, temp, null);
       temp.prev = this.head;
+      // increment length by 1
+      this.length++;
+      // if the length is now too long
+      if (this.length > this.maxLength) {
+        this.tail = this.tail.prev;
+        this.tail.next = null;
+        this.length--;
+      }
     }
   }
 
@@ -75,10 +89,9 @@ test.set(2, 'c');
 test.set(3, 'd');
 test.set(4, 'e');
 console.log(test.retrieveAll());
-console.log(test.retrieveAll());
 // -> ['e', 'd', 'c', 'b', 'a']
 test.set(5, 'f');
-console.log(test.retrieveAll() === ['f', 'e', 'd', 'c', 'b']);
+console.log(test.retrieveAll());
 // -> ['f', 'e', 'd', 'c', 'b']
 test.get(3);
 test.get(4);
