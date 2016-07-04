@@ -26,6 +26,15 @@ LRUcache.prototype.retrieveAll = () => {
 
 };
 
+LRUcache.prototype.node = (key, value, next, prev) => {
+  return {
+    key,
+    value,
+    next,
+    prev,
+  };
+};
+
 const test = new LRUcache();
 test.set(0, 'a');
 test.set(1, 'b');
