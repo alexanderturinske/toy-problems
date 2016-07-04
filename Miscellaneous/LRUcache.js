@@ -18,11 +18,31 @@ class LRUcache {
   };
 
   set(key, value) {
-
+    // if head isn't there
+    if (!this.head) {
+      // set as head with a next of null
+      this.head = this.newNode(key, value, null, null);
+    // if head is there
+    } else {
+      // set a temp variable equal to the head
+      var temp = this.head;
+      // assign the new head to the new key/value object with the next being null
+      this.head = this.newNode(key, value, temp, null);
+      temp.prev = this.head;
+    }
   };
 
   retrieveAll() {
-
+    // define an array to store the values in
+    // define a recursive function that takes a node as an argument
+      // base case
+      // if node.next equals null
+        // return;
+      // recursive case
+        // push node.value into the array
+        // call the recursive function with node.next
+    // call recursive function with this.head
+    // return array
   };
 
   newNode(key, value, next, prev) {
