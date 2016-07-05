@@ -132,7 +132,7 @@ test.get(4);
 console.log(test.retrieveAll());
 // -> ['e', 'd', 'f', 'c', 'b']
 test.get(2);
-console.log(test.retrieveAll() === ['c', 'e', 'd', 'f', 'b']);
+console.log(test.retrieveAll());
 // -> ['c', 'e', 'd', 'f', 'b']
 
 module.exports = {
