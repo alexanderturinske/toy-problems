@@ -3,8 +3,23 @@
  * Implement an insertion sort
 **/
 
-const insertionSort = () => {
-
+const insertionSort = (array) => {
+  for (var i = 1; i < array.length; i++) {
+    // save the value you want to insert
+    var val = array[i];
+    // save the insertionLocation
+    var insertionLocation = i;
+    // while the insertionLocation location is greater than 0 and val is larger than the next value
+    while (insertionLocation > 0 && val < array[insertionLocation - 1]) {
+      // move the previous value to the insertionLocation
+      array[insertionLocation] = array[insertionLocation - 1];
+      // decrement the insertionLocation
+      insertionLocation -= 1;
+    }
+    // insert the insertionLocation
+    array[insertionLocation] = val;
+  }
+  return array;
 };
 
 
