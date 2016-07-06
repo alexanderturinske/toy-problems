@@ -6,18 +6,18 @@
    (10).toString(16)
 **/
 
-const toHex = () => {
+const toHex = (n) => {
 
 };
 
-console.log(toHex() === EXPECTED_OUTCOME);
-// -> EXPECTED_OUTCOME
-console.log(toHex() === EXPECTED_OUTCOME);
-// -> EXPECTED_OUTCOME
-console.log(toHex() === EXPECTED_OUTCOME);
-// -> EXPECTED_OUTCOME
-console.log(toHex() === EXPECTED_OUTCOME);
-// -> EXPECTED_OUTCOME
+console.log(toHex(10) === 'a');
+// -> 'a'
+console.log(toHex(256) === '100');
+// -> '100'
+console.log(toHex(20) === '14');
+// -> '14'
+console.log(toHex(15) === 'f');
+// -> 'f'
 
 module.exports = {
   toHex,
