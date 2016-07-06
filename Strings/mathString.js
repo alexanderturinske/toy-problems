@@ -1,6 +1,7 @@
 'use strict';
 /**
  * Take a string equation (E.g., ‘5+4*3-8’) and calculate the result and write a test
+ help: abstract syntax trees, recursive, eval
 **/
 
 const mathString = () => {
