@@ -5,40 +5,7 @@
 **/
 
 const mathString = (string) => {
-  const operators = [['*', '/'], ['+', '-']];
-  let mathArray = string.split('');
-  for (let i = 0; i < mathArray; i++) {
-    let j = i;
-    while (mathArray[j] !== '*' || mathArray[j] !== '/' || mathArray[j] !== '+' || mathArray[j] !== '-') {
-      j++;
-    }
-    mathArray = mathArray.slice(i + 1, j + 1).join('').concat(mathArray.slice(j + 1));
-  };
-  operators.forEach((ele, ind) => {
-    for (var k = 0; k < mathArray.length; k++) {
-      let result;
-      if (mathArray[k] === ele[0]) {
-        if (ele[0] === '*') {
-          result = parseInt(mathArray[k - 1], 10) * parseInt(mathArray[k + 1], 10);
-          mathArray = mathArray.slice(k + 2).unshift(result);
-        } else {
-          result = parseInt(mathArray[k - 1], 10) + parseInt(mathArray[k + 1], 10);
-          mathArray = mathArray.slice(k + 2).unshift(result);
-        }
-      } else if (mathArray[k] === ele[1]) {
-        if (ele[1] === '-') {
-          result = parseInt(mathArray[k - 1], 10) / parseInt(mathArray[k + 1], 10);
-          mathArray = mathArray.slice(k + 2).unshift(result);
-        } else {
-          result = parseInt(mathArray[k - 1], 10) - parseInt(mathArray[k + 1], 10);
-          mathArray = mathArray.slice(k + 2).unshift(result);
-        }
-      }
-    }
-  });
-  // TODO why is mathArray a number?
-  console.log(typeof mathArray);
-  // return parseInt(mathArray.join(''));
+  const mathArray = string.match(/\d+|\D/g);
 };
 
 console.log(mathString('5+4*3-8') === 9);
