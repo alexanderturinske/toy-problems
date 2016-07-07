@@ -4,7 +4,29 @@
 **/
 
 const mergeSort = (array) => {
-
+  // base case
+  if (array.length <= 1) {
+    return array;
+  }
+  // recursive case
+  const front = mergeSort(array.slice(0, array.length / 2));
+  const back = mergeSort(array.slice(array.length / 2));
+  // combine arrays
+  const sorted = [];
+  while (front.length || back.length) {
+    if (front[0] !== undefined && back[0] !== undefined) {
+      if (front[0] < back[0]) {
+        sorted.push(front.shift());
+      } else {
+        sorted.push(back.shift());
+      }
+    } else if (front[0] !== undefined) {
+      sorted.push(front.shift());
+    } else if (back[0] !== undefined) {
+      sorted.push(back.shift());
+    }
+  }
+  return sorted;
 };
 
 
