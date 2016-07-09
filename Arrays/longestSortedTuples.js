@@ -44,7 +44,24 @@ const longestSortedTuples = (tuples) => {
 
   // define the recursive function, findLongest, to build tree
   const findLongest = (currentArray) => {
+    currentArray = currentArray || [];
+    
+    // recursive case
+    sortedTuples.forEach((ele, ind) => {
+      if (currentArray === undefined || currentArray.length === 0) {
+        currentArray = [ele];
+        findLongest(currentArray);
+      } else {
+        if (currentArray[currentArray.length - 1][1] > ele[1]) {
+          currentArray.push(ele);
+          findLongest(currentArray);
+          currentArray.pop();
+        }
+      }
+    });
 
+    // base case
+    storage.push(currentArray.slice());
   };
 
   // call recursive function, findLongest
