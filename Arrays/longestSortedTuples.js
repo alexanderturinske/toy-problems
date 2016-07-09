@@ -9,8 +9,8 @@ There is a hypothesis floating around that SAT score is a strong indicator of GP
 **/
 
 const longestSortedTuples = (tuples) => {
-  // sort tuples by one or the other
-  // use merge sort
+  // sort tuples by one or the other (in the below case, sort the SAT score in ascending order)
+  // using a merge sort because it has O(n log(n))
   const tupleMergeSort = (tupleArray) => {
     // base case
     if (tupleArray.length <= 1) {
@@ -35,6 +35,7 @@ const longestSortedTuples = (tuples) => {
       }
     }
 
+    // return sorted combination of front and back
     return output;
   };
   const sortedTuples = tupleMergeSort(tuples);
@@ -42,10 +43,9 @@ const longestSortedTuples = (tuples) => {
   // create a storage array to store all the array of tuples
   const storage = [];
 
-  // define the recursive function, findLongest, to build tree
+  // define the recursive function, findLongest, to build the decision tree
   const findLongest = (currentArray) => {
     currentArray = currentArray || [];
-    
     // recursive case
     sortedTuples.forEach((ele, ind) => {
       if (currentArray === undefined || currentArray.length === 0) {
