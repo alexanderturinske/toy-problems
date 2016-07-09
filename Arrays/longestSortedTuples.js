@@ -34,16 +34,26 @@ const longestSortedTuples = (tuples) => {
         output.push(back.shift());
       }
     }
-    
+
     return output;
   };
   const sortedTuples = tupleMergeSort(tuples);
-  return sortedTuples;
+
   // create a storage array to store all the array of tuples
+  const storage = [];
+
   // define the recursive function, findLongest, to build tree
+  const findLongest = (currentArray) => {
+
+  };
+
   // call recursive function, findLongest
-  // find the longest of the arrays
-  // return the longest of the arrays
+  findLongest();
+
+  // find and return the longest of the arrays
+  return storage.reduce((accumulator, current) => {
+    return accumulator.length < current.length ? current : accumulator;
+  }, []);
 };
 
 let temp = [];
