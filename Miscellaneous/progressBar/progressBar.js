@@ -3,6 +3,6 @@ var updateProgress = function (e) {
   var val = input.value;
   var progress = document.querySelector('.progress');
   input.value = '';
-  document.querySelector('.container').style.width = val + 'px';
+  document.querySelector('.container').style.width = val + '%';
   progress.style.width = val + 'px';
 };
