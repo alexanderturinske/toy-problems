@@ -1,0 +1,13 @@
+.container, .progress {
+  display: inline-block;
+  min-height: 25px;
+}
+
+.container {
+  width: 100px;
+}
+
+.progress {
+  background-color: green;
+  border: 1px solid black;
+}
