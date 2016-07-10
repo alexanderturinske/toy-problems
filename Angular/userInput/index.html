@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="" ng-init="world='Angular'; temp='Sorry React';">
+<html ng-app="UserInput" ng-init="world='Angular'; temp='Sorry React';">
   <head>
     <title>User Input</title>
     <link rel="stylesheet" type="text/css" href="">
   </head>
-  <body>
+  <body ng-controller="UserController as userc">
     <div>Hello {{ world }}</div>
     <div>{{ temp }}</div>
+    <div>{{ userc.name }}</div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script type="text/javascript" src="app.js" async></script>
+    <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>
