@@ -4,14 +4,12 @@
 
 .container {
   background-color: black;
-  width: 100px;
-  max-width: 100px;
-  border: 1px solid black;
+  width: 1000px;
   padding: 2px;
 }
 
 .progress {
-  background-color: yellow;
-  width: 10%;
+  background-color: lightgreen;
+  width: 0%;
   height: 20px;
 }
