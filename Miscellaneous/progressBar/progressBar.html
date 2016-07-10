@@ -2,16 +2,20 @@
 <html>
   <head>
     <title>Progress Bar</title>
+    <link rel="stylesheet" type="text/css" href="progressBar.css">
   </head>
   <body>
-    <form onSubmit="updateProgress()">
-      <input type='text' name='hello'>
-      <input type='submit' value='Submit'>
+    <form>
+      <input type='text' class='input'>
+      <button type='button' onclick="updateProgress()">Submit</button>
     </form>
-    <span class='container'>
-      <span class='progress'>
-      </span>
-    </span>
+    <br>
+    <div class='container'>
+      &nbsp;
+    <div class='progress'>
+        &nbsp;
+      </div>
+    </div>
     <script src="progressBar.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
