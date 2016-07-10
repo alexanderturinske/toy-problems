@@ -1,8 +1,11 @@
-var updateProgress = function (e) {
+var updateProgress = function () {
   var input = document.querySelector('.input');
-  var val = input.value;
   var progress = document.querySelector('.progress');
+  var val = input.value;
   input.value = '';
-  document.querySelector('.container').style.width = val + '%';
-  progress.style.width = val + 'px';
+  if (parseInt(val, 10) <= 100) {
+    progress.style.width = val.concat('%');
+  } else {
+    progress.style.width = '100%';
+  }
 };
