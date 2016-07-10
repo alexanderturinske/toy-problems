@@ -33,40 +33,38 @@ var findIslands = function(matrix) {
     });
   });
   // for every element in tupleArray
-  tupleArray.forEach(function (ele, k) {
+  while (tupleArray.length) {
     // remove the first element from the tupleArray and place it in the queue
     queue.push(tupleArray.shift());
     // increment counter by one
     counter++;
+    console.log('c', queue);
     // for every element in queue
-    queue.forEach(function (elem) {
+    while (queue.length) {
+      var eleme = tupleArray[0];
       // remove the first element from the queue and set check equal to it
       check = queue.shift();
       // for every element in tupleArray
       tupleArray.forEach(function (eleme, l) {
         // if any other tuple is near check, place them in the queue
-        if (eleme[0] + 1 === check[0] && eleme[1] + 1 === check[1] ||
-          eleme[0] + 1 === check[0] && eleme[1] === check[1] ||
-          eleme[0] + 1 === check[0] && eleme[1] - 1 === check[1] ||
+        if (eleme[0] + 1 === check[0] && eleme[1] === check[1] ||
           eleme[0] === check[0] && eleme[1] + 1 === check[1] ||
           eleme[0] === check[0] && eleme[1] - 1 === check[1] ||
-          eleme[0] - 1 === check[0] && eleme[1] + 1 === check[1] ||
-          eleme[0] - 1 === check[0] && eleme[1] === check[1] ||
-          eleme[0] - 1 === check[0] && eleme[1] - 1 === check[1]
+          eleme[0] - 1 === check[0] && eleme[1] === check[1]
         ) {
-          queue.push(elem);
-          tupleArray = tupleArray.splice(l, 1);
+          queue.push(eleme);
+          tupleArray.splice(l, 1);
         }
       });
-    });
-  });
+    };
+  };
   // return counter
   return counter;
 };
 
 var test = [[1, 0, 0, 0],
             [1, 0, 1, 0],
-            [0, 0, 0, 1],
+            [0, 1, 0, 1],
             [0, 0, 1, 0]];
 
 console.log(findIslands(test));
