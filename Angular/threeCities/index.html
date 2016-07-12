@@ -6,16 +6,16 @@
   </head>
   <body ng-controller="ButtonController as button">
     <form>
-      <input ng-model="texts">
+      <input ng-model="button.textTime">
       <button>Click Me!</button>
     </form>
     <div>
       yis {{test}}
     </div>
     <div>
-      {{text}}
+      {{button.textTime}}
     </div>
-    <div ng-repeat="city in button.cities | filter:texts">
+    <div ng-repeat="city in button.cities | filter:button.textTime">
       <button className="{{$index}}">Show City Info</button>
       <div className="{{$index}}">{{city.id}}</div>
       <div className="{{$index}}">{{city.name}}</div>

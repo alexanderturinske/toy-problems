@@ -23,5 +23,6 @@
         name: 'Rochester',
       },
     ];
+    vm.textTime = '';
   }
 })();
