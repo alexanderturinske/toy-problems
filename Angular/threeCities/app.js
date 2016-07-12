@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('ThreeButtons', [])
+    .module('ThreeButtons', ['ButtonService'])
     .controller('ButtonController', ButtonController);
 
-  ButtonController.$inject = [];
+  ButtonController.$inject = ['ButtonFactory'];
 
-  function ButtonController() {
+  function ButtonController(ButtonFactory) {
     var vm = this;
     vm.cities = [
       {
@@ -24,5 +24,8 @@
       },
     ];
     vm.textTime = '';
+    vm.showInfo = function(index) {
+      ButtonFactory.showCity(index);
+    };
   }
 })();

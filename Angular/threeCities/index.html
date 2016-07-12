@@ -17,11 +17,12 @@
       {{button.textTime}}
     </div>
     <span ng-repeat="city in button.cities | filter:button.textTime" class="container">
-      <button className="{{$index}}">Show City Info</button>
-      <div className="{{$index}}">{{city.id}}</div>
-      <div className="{{$index}}">{{city.name}}</div>
+      <button class="{{$index}}" ng-click="button.showInfo($index)">Show City Info</button>
+      <div class="{{$index}}">{{city.id}}</div>
+      <div class="{{$index}}">{{city.name}}</div>
     </span>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./buttonService.js"></script>
   </body>
 </html>
