@@ -13,19 +13,22 @@
       {
         id: 1,
         name: 'West Bend',
+        visible: false,
       },
       {
         id: 2,
         name: 'Oshkosh',
+        visible: false,
       },
       {
         id: 3,
         name: 'Rochester',
+        visible: false,
       },
     ];
     vm.textTime = '';
-    vm.showInfo = function(index) {
-      ButtonFactory.showCity(index);
+    vm.showInfo = function(index, array) {
+      ButtonFactory.showCity(index, array);
     };
   }
 })();

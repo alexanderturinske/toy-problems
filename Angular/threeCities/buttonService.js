@@ -9,8 +9,8 @@
 
     function ButtonFactory() {
       var ButtonFactory = {};
-      ButtonFactory.showCity = function (index) {
-        console.log(index);
+      ButtonFactory.showCity = function (index, array) {
+        array[index].visible = !array[index].visible;
       };
       return ButtonFactory;
     }
