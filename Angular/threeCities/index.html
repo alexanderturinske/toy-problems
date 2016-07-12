@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="ThreeButtons" ng-init="test='hello';">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <form>
-      <button text="Hi">
+      <button>Click Me!</button>
     </form>
-    <div ng-model='hello'>
-
+    <div>
+      yis {{test}}
+    </div>
+    <div ng-model="hi">
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>

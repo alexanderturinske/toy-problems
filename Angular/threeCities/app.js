@@ -5,8 +5,7 @@
 
   ButtonController.$inject = [];
 
-  var ButtonController = function ButtonController() {
+  function ButtonController() {
     var vm = this;
-    
-  };
+  }
 })();
