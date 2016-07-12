@@ -20,9 +20,7 @@ var rps = function (n) {
     }
     // recursive case
     options.forEach(function (e) {
-      path = path.concat(e);
-      traverse(path);
-      path = path.slice(0, -1);
+      traverse(path.concat(e));
     });
   };
   traverse();
