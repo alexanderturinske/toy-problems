@@ -6,7 +6,7 @@
   </head>
   <body ng-controller="ButtonController as button">
     <form>
-      <input ng-model="text">
+      <input ng-model="texts">
       <button>Click Me!</button>
     </form>
     <div>
@@ -15,10 +15,10 @@
     <div>
       {{text}}
     </div>
-    <div ng-repeat="city in button.cities track by $index">
-      <button>Show City Info</button>
-      <div>{{city.id}}</div>
-      <div>{{city.name}}</div>
+    <div ng-repeat="city in button.cities | filter:texts">
+      <button className="{{$index}}">Show City Info</button>
+      <div className="{{$index}}">{{city.id}}</div>
+      <div className="{{$index}}">{{city.name}}</div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
