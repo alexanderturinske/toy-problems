@@ -2,6 +2,7 @@
 <html ng-app="ThreeButtons" ng-init="test='hello';">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Three Cities</title>
   </head>
   <body ng-controller="ButtonController as button">
@@ -15,11 +16,11 @@
     <div>
       {{button.textTime}}
     </div>
-    <div ng-repeat="city in button.cities | filter:button.textTime">
+    <span ng-repeat="city in button.cities | filter:button.textTime" class="container">
       <button className="{{$index}}">Show City Info</button>
       <div className="{{$index}}">{{city.id}}</div>
       <div className="{{$index}}">{{city.name}}</div>
-    </div>
+    </span>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
   </body>
