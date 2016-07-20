@@ -4,34 +4,55 @@
 **/
 
 const heapSerialize = (heap) => {
+  const serialized = [];
   const queue = [];
   const search = (node) => {
-    // base case
-    if (node.left === null && node.right === null) {
-      return;
+    if (node === null) {
+      serialized.push(-1);
+    } else {
+      serialized.push(node.value);
     }
     // recursive case
-    if (node.left) {
-      queue.push(node.left.value);
-      if (node.right) {
-        queue.push(node.right.value);
-        search(node.left);
-        search(node.right);
-      } else {
-        search(node.left);
-      }
+    if (node !== null) {
+      queue.push(node.left);
+      queue.push(node.right);
+    }
+    if (queue.length > 0) {
+      search(queue.shift());
     }
   };
   search(heap.root);
-  return queue;
+  return serialized;
 };
 
 const heapDeserialize = (heapArray) => {
 
 };
 
-// console.log(heapSerialize() === EXPECTED_OUTCOME);
-// // -> EXPECTED_OUTCOME
+class MinBinaryHeap {
+  constructor(value) {
+    this.root = {
+      value,
+      left: {
+        value: value + 1,
+        left: {
+          value: value + 3,
+          left: null,
+          right: null,
+        },
+        right: null,
+      },
+      right: {
+        value: value + 2,
+        left: null,
+        right: null,
+      },
+    };
+  }
+};
+const heap = new MinBinaryHeap(1);
+console.log(heapSerialize(heap) + ' === [1, 2, 3, 4, -1, -1, -1, -1, -1]');
+// -> [2, 3, 4, 5]
 // console.log(heapSerialize() === EXPECTED_OUTCOME);
 // // -> EXPECTED_OUTCOME
 // console.log(heapSerialize() === EXPECTED_OUTCOME);
